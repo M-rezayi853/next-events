@@ -1,30 +1,46 @@
-import React from 'react'
+import Head from 'next/head'
+import { useRouter } from 'next/router'
 
-// import { getFeaturedEvents } from '../dummy-data'
-import { getFeaturedEvents } from '../helpers/api-util'
-import EventList from '../components/events/EventList'
+import Button from '../components/ui/Button';
+// import { getFeaturedEvents } from '../helpers/api-util';
+// import EventList from '../components/events/EventList';
 
-function HomePage(props) {
-  const { events } = props
-
-  // const featuredEvents = getFeaturedEvents()
+function FirstPage(props) {
+  // const { events } = props
+  
+  const router = useRouter
+  const link = '/home'
 
   return (
     <div>
-      <EventList items={events} />
+      <Head>
+        <title>NextJS Events</title>
+        <meta 
+          name='description' 
+          content='Find a lot of great events that allow you to evolve...' 
+        />
+      </Head>
+
+      {/* <EventList items={events} /> */}
+
+      <div className='center'>
+        <Button link={link}>
+          Home Page
+        </Button>
+      </div>
     </div>
-  )
+  );
 }
 
-export async function getStaticProps() {
-  const featuredEvents = await getFeaturedEvents()
+// export async function getStaticProps() {
+//   const featuredEvents = await getFeaturedEvents();
 
-  return {
-    props: {
-      events: featuredEvents
-    },
-    revalidate: 1800
-  }
-}
+//   return {
+//     props: {
+//       events: featuredEvents
+//     },
+//     revalidate: 1800
+//   }
+// }
 
-export default HomePage
+export default FirstPage;

@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 import Button from '../ui/Button'
 import DateIcon from '../icons/DateIcon'
@@ -19,7 +20,8 @@ function EventItem({ id, title, location, date, image }) {
 
   return (
     <li className={classes.item}>
-      <img className={classes.img} src={'/' + image} alt={title}/>
+      <Image src={'/' + image} alt={title} width={300} height={160} />
+      {/* <img src={'/' + image} alt={title}/> */}
 
       <div className={classes.content}>
         <div className={classes.summary}>
