@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import Button from '../components/ui/Button';
 // import { getFeaturedEvents } from '../helpers/api-util';
 // import EventList from '../components/events/EventList';
+import NewsletterRegistration from '../components/input/NewsletterRegistration'
 
 function FirstPage(props) {
   // const { events } = props
@@ -20,6 +21,8 @@ function FirstPage(props) {
           content='Find a lot of great events that allow you to evolve...' 
         />
       </Head>
+
+      <NewsletterRegistration />
 
       {/* <EventList items={events} /> */}
 

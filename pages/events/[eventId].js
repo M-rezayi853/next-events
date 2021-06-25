@@ -9,6 +9,7 @@ import EventLogistics from '../../components/event-detail/EventLogistics'
 import EventContent from '../../components/event-detail/EventContent'
 // import ErrorAlert from '../../components/error-alert/ErrorAlert'
 // import Button from '../../components/ui/Button'
+import Comments from '../../components/input/Comments'
 
 function EventDetailPage(props) {
   // const router = useRouter()
@@ -42,6 +43,8 @@ function EventDetailPage(props) {
       <EventContent>
         <p>{event.description}</p>
       </EventContent>
+
+      <Comments eventId={event.id} />
     </Fragment>
   )
 }
