@@ -7,7 +7,7 @@ import Head from 'next/head'
 import EventList from '../../components/events/EventList'
 import ResultsTitle from '../../components/results-title/ResultsTitle'
 import Button from '../../components/ui/Button'
-import ErrorAlert from '../../components/error-alert/ErrorAlert'
+import ErrorAlert from '../../components/ui/ErrorAlert'
 
 function FilteredEventsPage(props) {
   // const { hasError, filteredEvents, numYear, numMonth } = props

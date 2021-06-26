@@ -1,16 +1,11 @@
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 
-import Button from '../components/ui/Button';
-// import { getFeaturedEvents } from '../helpers/api-util';
-// import EventList from '../components/events/EventList';
+import { getFeaturedEvents } from '../helpers/api-util';
+import EventList from '../components/events/EventList';
 import NewsletterRegistration from '../components/input/NewsletterRegistration'
 
 function FirstPage(props) {
-  // const { events } = props
-  
-  const router = useRouter
-  const link = '/home'
+  const { events } = props
 
   return (
     <div>
@@ -24,26 +19,20 @@ function FirstPage(props) {
 
       <NewsletterRegistration />
 
-      {/* <EventList items={events} /> */}
-
-      <div className='center'>
-        <Button link={link}>
-          Home Page
-        </Button>
-      </div>
+      <EventList items={events} />
     </div>
   );
 }
 
-// export async function getStaticProps() {
-//   const featuredEvents = await getFeaturedEvents();
+export async function getStaticProps() {
+  const featuredEvents = await getFeaturedEvents();
 
-//   return {
-//     props: {
-//       events: featuredEvents
-//     },
-//     revalidate: 1800
-//   }
-// }
+  return {
+    props: {
+      events: featuredEvents
+    },
+    revalidate: 1800
+  }
+}
 
 export default FirstPage;
